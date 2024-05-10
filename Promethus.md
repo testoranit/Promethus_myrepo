@@ -97,3 +97,68 @@ PROMQL
 it is read only u can't insert data
 
 hhtp request toal in pro gui
+
+
+**Service discovery**
+add secret key and access key in config file yaml
+Check service discovery doc for promethus online
+
+
+**Exporters**
+(system statstiscs)
+
+***Aleting**
+After configuring alerts on Promethus server it will send push alerts to Alert manager
+in config file
+- alert : cpuUsage
+
+by default alert manager is not installed u need to install it.
+COncepts
+grouping:- multiple alerts ino 1 config.
+inhibition:- silence other alerts if one specific alert is already fired.
+Silences:- silence the alert for maintainence window.
+
+Alert states(Inactive,pending,firing)
+Alert manager runs on port 9093
+
+
+lab:-
+go to scripts dir on ur server
+install alerbanager script run it
+add the output to alertmanager.yaml
+install mail server script
+restart alertmanager restrat
+
+setup alert rules
+
+
+**Prometheus storage**
+**Prometheus Security**
+you can still enable security via authentication and TLS,using a reverse proxy.
+
+Demo:-
+go to Prom server
+
+reverse proxy.sh
+
+
+**Monitoring a Python Flask Web Application** backend **mySQL**
+
+![MOnitoring Python web app](https://github.com/testoranit/Promethus_myrepo/assets/124513439/9f4431d1-7d31-465d-9f83-ac20bdef1ff4)
+
+Lab:-
+go to promethus server
+install docker
+/flask dir
+docker-compose up -d 
+curl localhost:5000
+curl localhost:5000/query
+curl localhost:5000/sleep
+curl localhost:8000
+curl localhost:5000/sleep
+
+go to scrips dir
+cadd add-flashk-app
+execute this script
+and restart prometheus
+go to prom server ui and search mysql_query_latency_seconds_sum
