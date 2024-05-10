@@ -80,3 +80,20 @@ Include count or sum
 
 4)Summary:-also does histogram and summary gives more details
 u have 2 counters like no of requesta nd avg latency
+
+u need install client libraries for uf application
+
+**********
+pushing metrics
+Prometheus b deafult has pull based metrics
+sometimes a job runs for small time(or server NA,or due to FIREWALL) and it many not be possible for promeths to pull metrics
+hence that job(app)
+
+job---->push metrics-->PUSSH GATEWAY<-----> PROmethus Pulls metrics
+U can delete the metrics using API it doesn't do it on it's own.
+
+****
+PROMQL
+it is read only u can't insert data
+
+hhtp request toal in pro gui
